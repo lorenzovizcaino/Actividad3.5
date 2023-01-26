@@ -122,4 +122,15 @@ public class Emp implements java.io.Serializable {
 		this.emps = emps;
 	}
 
+	@Override
+	public String toString() {
+		return "Emp{" +
+				"empno=" + empno +
+				", ename='" + ename + '\'' +
+				", job='" + job + '\'' +
+				", hiredate=" + hiredate +
+				", sal=" + sal +
+				", comm=" + comm +
+				'}';
+	}
 }
