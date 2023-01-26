@@ -74,8 +74,8 @@ public class ConsultasHQL {
             List<Integer> lista=new ArrayList<>();
             lista.add(10);
             lista.add(20);
-            List<Departamento> consulta=session.createQuery("SELECT d from Departamento d where d.deptno in :listado").setParameterList("listado",lista).list();
-            for (Departamento d:consulta) {
+            List<String> consulta=session.createQuery("SELECT d.dname from Departamento d where d.deptno in :listado").setParameterList("listado",lista).list();
+            for (String d:consulta) {
                 System.out.println(d);
             }
         }
