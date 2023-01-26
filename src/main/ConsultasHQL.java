@@ -83,7 +83,7 @@ public class ConsultasHQL {
         {
             //6. El número de empleados por departamento
             System.out.println("\n6. El número de empleados por departamento");
-            List<Object[]> lista=session.createQuery("select dname, count(deptno) from Departamento group by dname").list();
+            List<Object[]> lista=session.createQuery("select d.dname, count(d.deptno) from Departamento d group by d.dname").list();
             for (Object[] obj:lista) {
                 System.out.println(obj[0]+ ": "+obj[1]);
             }
