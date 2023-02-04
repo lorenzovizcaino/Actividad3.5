@@ -73,8 +73,13 @@ public class ConsultasAsociacionesHQL {
 
         {
             System.out.println("7. El nombre de cada empleado con el de su jefe. Ha de aparecer el nombre del empleado aunque no tenga jefe");
-
-
+            List<Object[]> lista=session.createQuery(
+                   // "select e.ename, e.emp.ename from Emp e" //asi no sale empleado si no tiene jefe
+                      "select e.ename, e.emp.ename from Emp e left join e.emps e"
+                        ).list();
+            for (Object[] e:lista) {
+                System.out.println("Nombre del empleado: "+e[0]+", su jefe es: "+e[1]);
+            }
 
 
         }
